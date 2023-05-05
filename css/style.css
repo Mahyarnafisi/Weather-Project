@@ -41,6 +41,7 @@ body {
 .app {
   background-color: #fff;
   width: 100%;
+  max-width: 80rem;
   height: min-content;
   border-radius: 1rem;
   box-shadow: 0 2rem 6rem #02304720;
@@ -48,7 +49,7 @@ body {
   position: relative;
 }
 
-/* ----buttons---------------------- */
+/* !----buttons---------------------- */
 
 .btn {
   display: flex;
@@ -82,7 +83,7 @@ body {
   font-size: 2.1rem;
 }
 
-/* ---------------------------------- */
+/*! logo Container----------------------------- */
 .logo-container {
   /* border: 1px solid red; */
   position: absolute;
@@ -128,20 +129,41 @@ body {
   color: var(--color-primary-3);
 }
 
-/* Search Box section*/
+/*! Search Box section*/
 
 .search-box {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
-/* Not Found section  */
+.search-box i {
+  color: #444;
+}
+
+.search-box__input {
+  box-shadow: 0 1rem 3rem #00000025;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 75%;
+  max-width: 50rem;
+}
+
+.search-box__button {
+}
+
+/*! Not Found section  */
 
 .not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .not-found__img {
-  width: 100%;
+  width: 20rem;
+  max-width: 60%;
   height: auto;
 }
