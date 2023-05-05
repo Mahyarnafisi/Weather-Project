@@ -1,6 +1,6 @@
 :root {
   --color-primary-1: #8ecae6ff;
-  --color-primary-2: #499eec;
+  --color-primary-2: #2f63ff;
   --color-primary-3: #023047ff;
   --color-secondary-1: #ffb703ff;
   --color-secondary-2: #fb8500ff;
@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 0;
 }
 
 html {
@@ -26,10 +27,6 @@ body {
   height: 100vh;
   background-color: var(--color-primary-1);
 }
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 200, "opsz" 48;
-  color: #fff;
-}
 
 .container {
   width: 100%;
@@ -43,7 +40,7 @@ body {
 
 .app {
   background-color: #fff;
-  width: 50vw;
+  width: 100%;
   height: min-content;
   border-radius: 1rem;
   box-shadow: 0 2rem 6rem #02304720;
@@ -51,10 +48,13 @@ body {
   position: relative;
 }
 
+/* ----buttons---------------------- */
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* gap: 1rem; */
   padding: 1rem;
   border: none;
   border-radius: 1rem;
@@ -77,19 +77,26 @@ body {
   background-color: #9ad9f7;
   color: #023047ff;
 }
+
+.bi {
+  font-size: 2.1rem;
+}
+
+/* ---------------------------------- */
 .logo-container {
   /* border: 1px solid red; */
   position: absolute;
-  top: -100%;
-  left: -3%;
+  top: -90%;
+  left: -0%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: stretch;
   overflow: hidden;
   width: 7.6rem;
   height: auto;
   border-radius: 1rem;
   user-select: none;
+  transition: all 1s;
 }
 
 .logo-container:hover {
@@ -119,4 +126,22 @@ body {
 .madeByMe span {
   font-weight: 900;
   color: var(--color-primary-3);
+}
+
+/* Search Box section*/
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Not Found section  */
+
+.not-found {
+}
+
+.not-found__img {
+  width: 100%;
+  height: auto;
 }
