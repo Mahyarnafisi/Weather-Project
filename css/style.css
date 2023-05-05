@@ -105,14 +105,14 @@ body {
 .logo {
   width: 7.6rem;
   height: auto;
-  transition: all 0.2s;
+  transition: all 0.2s 0.2s;
 }
 
 .madeByMe {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
-  transition: all 0.2s;
+  transition: all 0.2s 0.2s;
   font-family: "Courier New", Courier, monospace;
 }
 
