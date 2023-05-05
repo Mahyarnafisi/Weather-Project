@@ -178,10 +178,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  scale: 0;
-  opacity: 0;
+  /* scale: 0;
+  opacity: 0; */
   display: none;
-  margin-top: 2rem;
+
+  margin-bottom: 2rem;
 }
 
 .not-found__img {
