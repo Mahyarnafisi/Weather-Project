@@ -41,9 +41,8 @@ body {
 .app {
   background-color: #fff;
   width: 100%;
-  height: 10vh;
+  height: min-content;
   max-width: 80rem;
-
   border-radius: 1rem;
   box-shadow: 0 2rem 6rem #02304720;
   padding: 2rem;
@@ -138,7 +137,6 @@ body {
   justify-content: space-evenly;
   /* gap: 1rem; */
   height: min-content;
-  margin-bottom: 2rem;
 }
 
 .search-box i {
@@ -183,6 +181,7 @@ body {
   scale: 0;
   opacity: 0;
   display: none;
+  margin-top: 2rem;
 }
 
 .not-found__img {
@@ -215,7 +214,7 @@ body {
 }
 
 .weather-box__temerature {
-  font-size: 9.2rem;
+  font-size: 8.6rem;
   line-height: 1;
   font-weight: 900;
   background: -webkit-linear-gradient(-120deg, #085074 0%, transparent 130%);
@@ -283,8 +282,10 @@ body {
 /* --------------------- */
 .weather-box,
 .weather-detail {
+  margin-top: 2rem;
   opacity: 0;
   scale: 0;
+  display: none;
 }
 
 /* !animation  */
