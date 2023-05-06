@@ -34,29 +34,68 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
       containerError404.style.display = "none";
       containerError404.classList.remove(".fade-in");
       console.log(json);
+
+      //
+
+      const image = document.querySelector(".weather-box img");
+      const temperature = document.querySelector(".weather-box__temperature");
+      const description = document.querySelector(".weather-box__description");
+      const humidity = document.querySelector(".humidity .humidity__text span");
+      const wind = document.querySelector(".wind .wind__text span");
+
+      switch (json.weather[0].main) {
+        case "Clear":
+          image.src = "img/Clear.webp";
+          break;
+
+        case "Clouds":
+          image.src = "img/Cloud.webp";
+          break;
+
+        case "Rain":
+          image.src = "img/Rain.webp";
+          break;
+
+        case "Haze":
+          image.src = "img/sun-cloud-cloud.webp";
+          break;
+
+        case "Mist":
+          image.src = "img/cloud-thunder.webp";
+          break;
+        default:
+          image.src = "";
+      }
+      temperature.innerHTML = `${parseInt(json.main.temp).toFixed(0)}<span class="centigrade">°C</span>`;
+      description.innerHTML = `${json.weather[0].description}`;
+      humidity.innerHTML = `${json.main.humidity}<span class="percentage" >%</span>`;
+      wind.innerHTML = `${parseInt(json.wind.speed)}<span class="kmh" >km/h</span> `;
+
+      containerWeather.style.display = "flex";
+      containerDetail.style.display = "flex";
     });
 });
 
 // press Enter key to search value of input search
-const keyDown = window.addEventListener("keydown", (e) => {
-  const city = document.querySelector(".search-box__input").value;
-  if (e.key !== "Enter" || city === "") return;
-  else {
-    console.log(`Enter pressed, city name:${city}`);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeys}`)
-      .then((response) => response.json())
-      .then((json) => {
-        if (json.cod === "404") {
-          containerWeather.style.display = "none";
-          containerDetail.style.display = "none";
-          containerError404.classList.add(".fade-in");
-          containerError404.style.display = "flex";
-          document.querySelector(".not-found .not-found__message ").innerHTML = "City not found, please try again";
-          return;
-        }
-        containerError404.style.display = "none";
-        containerError404.classList.remove(".fade-in");
-        console.log(json);
-      });
-  }
-});
+// const keyDown = window.addEventListener("keydown", (e) => {
+//   const city = document.querySelector(".search-box__input").value;
+//   if (e.key !== "Enter" || city === "") return;
+//   else {
+//     console.log(`Enter pressed, city name:${city}`);
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeys}`)
+//       .then((response) => response.json())
+//       .then((json) => {
+//         if (json.cod === "404") {
+//           containerWeather.style.display = "none";
+//           containerDetail.style.display = "none";
+//           containerError404.classList.add(".fade-in");
+//           containerError404.style.display = "flex";
+//           document.querySelector(".not-found .not-found__message ").innerHTML = "City not found, please try again";
+//           return;
+//         }
+//         containerError404.style.display = "none";
+//         containerError404.classList.remove(".fade-in");
+//         console.log(json);
+//       });
+//   }
+// });

@@ -43,6 +43,7 @@ body {
   background-color: #fff;
   width: 100%;
   height: min-content;
+  max-height: 50vh;
   max-width: 80rem;
   border-radius: 1rem;
   box-shadow: 0 2rem 6rem #02304720;
@@ -208,16 +209,17 @@ body {
   height: min-content;
   padding-right: 5%;
   gap: 2rem;
+  position: relative;
 }
 
 .weather-box img {
-  width: 30vw;
-  max-width: 15rem;
+  width: 35vw;
+  max-width: 22rem;
 
-  height: auto;
+  height: 100%;
 }
 
-.weather-box__temerature {
+.weather-box__temperature {
   font-size: 8.6rem;
   line-height: 1;
   font-weight: 900;
@@ -225,12 +227,14 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0.3rem 0.3rem 1rem #00000025;
+  transition: all 0.2s;
 }
 
 .weather-box__description {
   font-size: 1.8rem;
   font-weight: 600;
   color: #085074;
+  text-transform: capitalize;
 }
 
 .weather-box__info {
@@ -243,7 +247,7 @@ body {
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .weather-detail p {
@@ -258,15 +262,42 @@ body {
 }
 
 .weather-detail .humidity i {
-  font-size: 2.6rem;
-  color: var(--color-primary-2);
-}
-
-.weather-detail .humidity__text {
+  font-size: 2.4rem;
+  color: var(--color-primary-3);
+  opacity: 75%;
 }
 
 .weather-detail span {
-  font-size: 1.6rem;
+  font-size: 3.2rem;
+  color: var(--color-primary-3);
+  font-weight: 600;
+}
+
+.kmh {
+  font-weight: 600;
+  margin-left: 0.5rem;
+  font-size: 1.6rem !important;
+  opacity: 50%;
+}
+
+.centigrade {
+  font-size: 2.4rem;
+  color: var(--color-primary-3);
+}
+
+.percentage {
+  font-weight: 600;
+  margin-left: 0.5rem;
+  font-size: 1.6rem !important;
+  opacity: 50%;
+}
+
+.humidity__text,
+.wind__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* ---------------------- */
@@ -279,16 +310,17 @@ body {
 }
 
 .weather-detail .wind i {
-  font-size: 2.6rem;
-  color: var(--color-primary-2);
+  font-size: 2.4rem;
+  color: var(--color-primary-3);
+  opacity: 75%;
 }
 
 /* --------------------- */
 .weather-box,
 .weather-detail {
   margin-top: 2rem;
-  opacity: 0;
-  scale: 0;
+  /* opacity: 0;
+  scale: 0; */
   display: none;
 }
 
