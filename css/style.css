@@ -47,6 +47,7 @@ body {
   box-shadow: 0 2rem 6rem #02304720;
   padding: 2rem;
   position: relative;
+  transition: all 0.2s;
 }
 
 /* !----buttons---------------------- */
@@ -292,7 +293,7 @@ body {
 /* !animation  */
 
 .fade-in {
-  animation: fade-in 1s forwards;
+  animation: fade-in 1s 1s backwards;
 }
 
 @keyframes fade-in {
