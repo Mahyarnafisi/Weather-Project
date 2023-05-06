@@ -16,7 +16,7 @@ const apiKeys = "cef6bfc4d64c3a8d9f6afcc10e72ae43";
 // ================//
 const fetchingClick = btnSearch.addEventListener("click", () => {
   const city = document.querySelector(".search-box__input").value;
-  console.log(`click name city:${city}`);
+  console.log(`clicked, city name:${city}`);
 
   if (city === "") return;
 
