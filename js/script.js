@@ -36,7 +36,8 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
       console.log(json);
 
       //
-
+      const appColor = document.querySelector(".app");
+      const cityName = document.querySelector(".city-name p");
       const image = document.querySelector(".weather-box img");
       const temperature = document.querySelector(".weather-box__temperature");
       const description = document.querySelector(".weather-box__description");
@@ -45,27 +46,29 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
 
       switch (json.weather[0].main) {
         case "Clear":
-          image.src = "img/Clear.webp";
+          image.src = "img/sunsun.webp";
           break;
 
         case "Clouds":
-          image.src = "img/Cloud.webp";
+          image.src = "img/cloudcloud.webp";
+
           break;
 
         case "Rain":
-          image.src = "img/Rain.webp";
+          image.src = "img/rainrain.webp";
           break;
 
         case "Haze":
-          image.src = "img/sun-cloud-cloud.webp";
+          image.src = "img/cloudthunder.webp";
           break;
 
         case "Mist":
-          image.src = "img/cloud-thunder.webp";
+          image.src = "img/suncloud.webp";
           break;
         default:
           image.src = "";
       }
+      cityName.innerHTML = `${json.name}, ${json.sys.country}`;
       temperature.innerHTML = `${parseInt(json.main.temp).toFixed(0)}<span class="centigrade">°C</span>`;
       description.innerHTML = `${json.weather[0].description}`;
       humidity.innerHTML = `${json.main.humidity}<span class="percentage" >%</span>`;
