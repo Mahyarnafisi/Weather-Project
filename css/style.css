@@ -36,6 +36,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: page-load 1s backwards;
 }
 
 .app {
@@ -47,7 +48,7 @@ body {
   box-shadow: 0 2rem 6rem #02304720;
   padding: 2rem;
   position: relative;
-  transition: all 0.2s;
+  /* transition: all 1s; */
 }
 
 /* !----buttons---------------------- */
@@ -99,6 +100,7 @@ body {
   border-radius: 1rem;
   user-select: none;
   transition: all 1s;
+  animation: page-load 1s backwards;
 }
 
 .logo-container:hover {
@@ -300,5 +302,17 @@ body {
   to {
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes page-load {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
