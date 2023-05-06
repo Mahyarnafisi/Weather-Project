@@ -40,9 +40,9 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
 
 // press Enter key to search value of input search
 const keyDown = window.addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") return;
+  const city = document.querySelector(".search-box__input").value;
+  if (e.key !== "Enter" || city === "") return;
   else {
-    const city = document.querySelector(".search-box__input").value;
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeys}`)
       .then((response) => response.json())
       .then((json) => {
