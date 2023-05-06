@@ -293,7 +293,7 @@ body {
 /* !animation  */
 
 .fade-in {
-  animation: fade-in 1s 1s backwards;
+  animation: fade-in 1s backwards;
 }
 
 @keyframes fade-in {
