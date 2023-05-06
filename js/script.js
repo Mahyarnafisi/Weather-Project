@@ -16,8 +16,7 @@ const apiKeys = "cef6bfc4d64c3a8d9f6afcc10e72ae43";
 // ================//
 const fetchingClick = btnSearch.addEventListener("click", () => {
   const city = document.querySelector(".search-box__input").value;
-
-  console.log(`${city}`);
+  console.log(`click name city:${city}`);
 
   if (city === "") return;
 
@@ -43,6 +42,7 @@ const keyDown = window.addEventListener("keydown", (e) => {
   const city = document.querySelector(".search-box__input").value;
   if (e.key !== "Enter" || city === "") return;
   else {
+    console.log(`Enter pressed, city name:${city}`);
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeys}`)
       .then((response) => response.json())
       .then((json) => {
