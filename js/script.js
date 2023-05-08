@@ -46,6 +46,8 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
       const description = document.querySelector(".weather-box__description");
       const humidity = document.querySelector(".humidity .humidity__text span");
       const wind = document.querySelector(".wind .wind__text span");
+      const highTemp = document.querySelector(".high p");
+      const lowTemp = document.querySelector(".low p");
 
       switch (json.weather[0].main) {
         case "Clear":
@@ -77,6 +79,8 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
       description.innerHTML = `${json.weather[0].description}`;
       humidity.innerHTML = `${json.main.humidity}<span class="percentage" >%</span>`;
       wind.innerHTML = `${parseInt(json.wind.speed)}<span class="kmh" >km/h</span> `;
+      highTemp.innerHTML = `${parseInt(json.main.temp_max)}°`;
+      lowTemp.innerHTML = `${parseInt(json.main.temp_min)}°a`;
 
       containerWeather.style.display = "flex";
       containerDetail.style.display = "flex";
