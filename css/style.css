@@ -67,8 +67,8 @@ body {
   width: 50%;
   height: auto;
   bottom: -5rem;
-  left: -5rem;
-  filter: blur(50px);
+  left: -10rem;
+  filter: blur(95px);
 }
 
 /* !----buttons---------------------- */
@@ -264,14 +264,16 @@ body {
 }
 
 .weather-box__temperature {
-  font-size: 8.6rem;
+  font-size: 12rem;
   line-height: 1;
   font-weight: 900;
-  background: -webkit-linear-gradient(-120deg, #085074 0%, transparent 130%);
+  background: -webkit-linear-gradient(-120deg, #085074 25%, transparent 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0.3rem 0.3rem 1rem #00000025;
   transition: all 0.2s;
+  z-index: 10;
+  transform: translateY(-4rem);
 }
 
 .weather-box__description {
@@ -279,6 +281,7 @@ body {
   font-weight: 600;
   color: #085074;
   text-transform: capitalize;
+  transform: translateY(-4rem);
 }
 
 .weather-box__info {
