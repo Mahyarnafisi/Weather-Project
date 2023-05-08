@@ -4,6 +4,8 @@ const containerApp = document.querySelector(".container .app");
 const containerWeather = document.querySelector(".weather-box");
 const containerDetail = document.querySelector(".weather-detail");
 const containerError404 = document.querySelector(".not-found");
+const containerCityName = document.querySelector(".city-name");
+
 // element
 const inputSearch = document.querySelector(".search-box__input");
 
@@ -24,6 +26,7 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       if (json.cod === "404") {
+        containerCityName.classList.toggle("display-on");
         containerWeather.style.display = "none";
         containerDetail.style.display = "none";
         containerError404.classList.add(".fade-in");
@@ -68,6 +71,7 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
         default:
           image.src = "";
       }
+      cityName.parentElement.classList.add("display-on");
       cityName.innerHTML = `${json.name}, ${json.sys.country}`;
       temperature.innerHTML = `${parseInt(json.main.temp).toFixed(0)}<span class="centigrade">°C</span>`;
       description.innerHTML = `${json.weather[0].description}`;
