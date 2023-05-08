@@ -49,17 +49,14 @@ body {
   background-image: linear-gradient(-33deg, #3fffdc15 0%, #ffffff10 50%, #7277ff15 75%, #8ecae650 100%);
   width: 100%;
   height: min-content;
-  /* max-height: 60vh; */
   max-width: 70rem;
   border-radius: 2rem;
   box-shadow: 0 2rem 6rem #02304720;
   padding: 2rem;
   position: relative;
-  /* transition: all 1s; */
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* overflow: hidden; */
 }
 
 .bg-logo {
@@ -420,6 +417,7 @@ body {
   /* opacity: 0;
   scale: 0; */
   display: none;
+  animation: fade-in 1s alternate;
 }
 
 .display-on {
@@ -433,9 +431,11 @@ body {
 }
 
 @keyframes fade-in {
-  to {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
-    scale: 1;
   }
 }
 

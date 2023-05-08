@@ -36,6 +36,7 @@ const fetchingClick = btnSearch.addEventListener("click", () => {
       }
       containerError404.style.display = "none";
       containerError404.classList.remove(".fade-in");
+
       console.log(json);
 
       //
