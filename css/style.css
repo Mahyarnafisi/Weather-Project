@@ -282,8 +282,13 @@ body {
   padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 3rem #00000025;
+  padding: 2rem;
+  border-top: 2px solid #ffffff70;
+  border-left: 2px solid #ffffff70;
 }
 
 .weather-detail p {
@@ -354,7 +359,7 @@ body {
 /* !  weather details HIGH AND LOW */
 .high-low {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   justify-content: center;
   align-items: center;
 }
